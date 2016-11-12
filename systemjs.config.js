@@ -27,6 +27,8 @@
       // other libraries
       'rxjs': 'npm:rxjs',
       'angular2-text-mask':'npm:angular2-text-mask',
+      'materialize-css': 'npm:materialize-css',
+      'angular2-materialize': 'npm:angular2-materialize',
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -40,6 +42,8 @@
       'angular2-text-mask': { 
         defaultExtension: 'js' 
       },
+      'materialize-css': { main: 'js/materialize' },
+      'angular2-materialize' : { main: 'dist/index', defaultExtension: 'js' }
     }
   });
 })(this);

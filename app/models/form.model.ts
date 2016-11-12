@@ -8,7 +8,10 @@ export class formData {
     public email: string,
     public telefone: string,
     public cidade: string,
-    public estado: string
+    public estado: string,
+    public agree: boolean,
+    public items: string,
+    public comida: string
   ) {
 
   }

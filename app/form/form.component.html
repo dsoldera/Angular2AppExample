@@ -1,30 +1,22 @@
-<h1>Danielle Angular 2 Form</h1>
+<h2>Simple Form</h2>
 
 <form #form="ngForm" novalidate>
   <md-card>
-    <md-card-content>
-      <!-- this ngModel there is no binding -->
-      <md-input placeholder="Nome" nome align="end"></md-input>
-    </md-card-content>
+      <label for="nome">Nome</label>
+      <input type="text" name="nome" [(ngModel)]="model.nome" />
 
-    <md-card-content>
       <label for="email">E-mail</label>
       <!-- this ngModel has one way binding. This is no changint the model -->
-      <input type="text" name="email" [ngModel]="model.email" /> 
-    </md-card-content>
+      <input type="text" name="email" [ngModel]="model.email" (ngModelChange)="changeEmail($event)" /> 
 
-    <md-card-content>
       <label for="telefone">Telefone</label>
         <!-- this ngModel has two way data binding with the Model on Controller -->
       <input type="text" name="telefone" [(ngModel)]="model.telefone" /> 
-    </md-card-content>
 
-    <md-card-content>
       <label for="cidade">Cidade</label>
       <!-- this ngModel has two way data binding  - Banana in a Box -->
       <input type="text" name="cidade" [(ngModel)]="cidade" />
       {{ cidade }}
-    </md-card-content>
 
     <md-card-content>
       <label for="estado">Estado</label>
@@ -34,21 +26,35 @@
     </md-card-content>
 
     <md-card-content>
-      <input type="checkbox" name="dani" /> 
+      <input type="checkbox" name="agree" [(ngModel)]="model.agree" /> 
       <label for="dani">I Agree</label>
     </md-card-content>
 
     <md-card-content>
       <label for="">Select</label>
-      <Select>
+      <select name="items" [(ngModel)]="model.items">
         <option *ngFor="let item of list">
             {{ item }}
         </option>
-      </Select>
+      </select>
+    </md-card-content>
+
+    <md-card-content>
+      <label>Comida Preferida</label>
+      
+      <label>
+        <input type="radio" name="comida" value="massas" [(ngModel)]="model.comida">
+        Massas
+      </label>
+
+      <label>
+        <input type="radio" name="comida" value="salada" [(ngModel)]="model.comida">
+        Salada
+      </label>
     </md-card-content>
 
     <md-card-actions>
-    <button md-raised-button>Enviar</button>
+      <button>Enviar</button>
     </md-card-actions>
   </md-card>
 </form>
@@ -59,5 +65,5 @@
 {{ model | json }}
 <br /><br />
 
-<h2>Angular ngModel only for Email</h2>
+<h2>Angular ngModel Values</h2>
 {{ form.value | json }}
