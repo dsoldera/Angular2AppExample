@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "author": "Danielle Soldera",
   "description": "My Angular 2 App Example builded to help me and others",
+  "keywords": [
+    "angular2",
+    "forms",
+    "typescript"
+  ],
   "scripts": {
     "start": "concurrently \"tsc -w\" \"lite-server\" ",
     "tsc": "tsc",
