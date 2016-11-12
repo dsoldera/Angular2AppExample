@@ -1,10 +1,12 @@
-<h1>Angular 2 Form</h1>
+<h1>Danielle Angular 2 Form</h1>
 
-<form action="" #form="ngForm">
-  <label for="name">Nome</label>
-  <input type="text" name="name" ngModel>
-
-  <button>Enviar</button>
+<form #form="ngForm" novalidate>
+  <md-input placeholder="Nome" align="end"></md-input>
+  <br /> <br />
+  <label for="email">E-mail</label>
+  <input type="text" name="email" ngModel>
+  <br /> <br />
+  <button md-raised-button>Enviar</button>
 </form>
-
+ <br /> <br />
 {{ form.pristine }}
