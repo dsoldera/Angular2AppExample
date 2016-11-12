@@ -1,12 +1,63 @@
 <h1>Danielle Angular 2 Form</h1>
 
 <form #form="ngForm" novalidate>
-  <md-input placeholder="Nome" align="end"></md-input>
-  <br /> <br />
-  <label for="email">E-mail</label>
-  <input type="text" name="email" ngModel>
-  <br /> <br />
-  <button md-raised-button>Enviar</button>
+  <md-card>
+    <md-card-content>
+      <!-- this ngModel there is no binding -->
+      <md-input placeholder="Nome" nome align="end"></md-input>
+    </md-card-content>
+
+    <md-card-content>
+      <label for="email">E-mail</label>
+      <!-- this ngModel has one way binding. This is no changint the model -->
+      <input type="text" name="email" [ngModel]="model.email" /> 
+    </md-card-content>
+
+    <md-card-content>
+      <label for="telefone">Telefone</label>
+        <!-- this ngModel has two way data binding with the Model on Controller -->
+      <input type="text" name="telefone" [(ngModel)]="model.telefone" /> 
+    </md-card-content>
+
+    <md-card-content>
+      <label for="cidade">Cidade</label>
+      <!-- this ngModel has two way data binding  - Banana in a Box -->
+      <input type="text" name="cidade" [(ngModel)]="cidade" />
+      {{ cidade }}
+    </md-card-content>
+
+    <md-card-content>
+      <label for="estado">Estado</label>
+      <!-- this is another way to create two way data binding - old version -->
+      <input type="text" name="estado"  [ngModel]="estado" (ngModelChange)="estado=$event" />
+      {{ estado }}
+    </md-card-content>
+
+    <md-card-content>
+      <input type="checkbox" name="dani" /> 
+      <label for="dani">I Agree</label>
+    </md-card-content>
+
+    <md-card-content>
+      <label for="">Select</label>
+      <Select>
+        <option *ngFor="let item of list">
+            {{ item }}
+        </option>
+      </Select>
+    </md-card-content>
+
+    <md-card-actions>
+    <button md-raised-button>Enviar</button>
+    </md-card-actions>
+  </md-card>
 </form>
- <br /> <br />
 {{ form.pristine }}
+
+<br /><br /><br />
+<h2>Model</h2>
+{{ model | json }}
+<br /><br />
+
+<h2>Angular ngModel only for Email</h2>
+{{ form.value | json }}

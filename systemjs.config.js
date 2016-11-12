@@ -25,7 +25,8 @@
       '@angular/material': 'npm:@angular/material/material.umd.js',
 
       // other libraries
-      'rxjs': 'npm:rxjs'
+      'rxjs': 'npm:rxjs',
+      'angular2-text-mask':'npm:angular2-text-mask',
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -35,7 +36,10 @@
       },
       rxjs: {
         defaultExtension: 'js'
-      }
+      },
+      'angular2-text-mask': { 
+        defaultExtension: 'js' 
+      },
     }
   });
 })(this);
