@@ -6,10 +6,20 @@ import { HttpModule } from '@angular/http';
 import { routing } from './app.routes';
 
 import { HomeComponent } from './home/home.component';
+import { FormComponent } from './form/form.component';
 
-@NgModule({
-  declarations: [ AppComponent, HomeComponent ], // used to import my components
-  imports:      [ BrowserModule, FormsModule, HttpModule, routing ], // used to import Angular 2 Modules
+@NgModule ({
+  declarations: [ // used to import my components 
+    AppComponent, 
+    HomeComponent,
+    FormComponent
+  ], 
+  imports: [ // used to import Angular 2 Modules 
+    BrowserModule, 
+    FormsModule, 
+    HttpModule, 
+    routing
+   ], 
   bootstrap:    [ AppComponent ]
 })
 
