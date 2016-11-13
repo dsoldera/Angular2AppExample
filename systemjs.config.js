@@ -32,6 +32,7 @@
       'materialize-css': 'npm:materialize-css',
       'angular2-materialize': 'npm:angular2-materialize',
       'moment': 'npm:ng2-bootstrap/node_modules/moment/moment',
+      'ng2-select': 'npm:ng2-select',
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -46,7 +47,8 @@
       'text-mask-core': { defaultExtension: 'js' },
       'angular2-text-mask': { defaultExtension: 'js'},
       'materialize-css': { main: 'js/materialize' },
-      'angular2-materialize' : { main: 'dist/index', defaultExtension: 'js' }
+      'angular2-materialize' : { main: 'dist/index', defaultExtension: 'js' },
+      'ng2-select': { defaultExtension: 'js', main: 'ng2-select.js' }
     }
   });
 })(this);
