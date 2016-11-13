@@ -18,6 +18,7 @@ import { Form2Component } from './form2/form2.component';
 import { DatePickerCalendar } from './ng2-bootstrap-examples/datepicker.component';
 import { TextMaskExamplesComponent } from './text-mask-examples/TextMaskExamples.component';
 import { Ng2SelectPluginComponent } from './ng2-select-plugin/Ng2SelectPlugin.component';
+import { jqueryExamplesComponent } from './jquery-examples/jqueryExamples.component';
 
 
 @NgModule ({
@@ -30,7 +31,8 @@ import { Ng2SelectPluginComponent } from './ng2-select-plugin/Ng2SelectPlugin.co
     Form2Component,
     DatePickerCalendar,
     TextMaskExamplesComponent,
-    Ng2SelectPluginComponent
+    Ng2SelectPluginComponent,
+    jqueryExamplesComponent
   ], 
   imports: [ // used to import Angular 2 Modules 
     BrowserModule,

@@ -33,6 +33,7 @@
       'angular2-materialize': 'npm:angular2-materialize',
       'moment': 'npm:ng2-bootstrap/node_modules/moment/moment',
       'ng2-select': 'npm:ng2-select',
+      'jquery': 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js',
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
