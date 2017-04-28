@@ -1,0 +1,69 @@
+<h2>Simple Form</h2>
+
+<form #form="ngForm" novalidate>
+  <md-card>
+      <label for="nome">Nome</label>
+      <input type="text" name="nome" [(ngModel)]="model.nome" />
+
+      <label for="email">E-mail</label>
+      <!-- this ngModel has one way binding. This is no changint the model -->
+      <input type="text" name="email" [ngModel]="model.email" (ngModelChange)="changeEmail($event)" />
+
+      <label for="telefone">Telefone</label>
+        <!-- this ngModel has two way data binding with the Model on Controller -->
+      <input type="text" name="telefone" [(ngModel)]="model.telefone" />
+
+      <label for="cidade">Cidade</label>
+      <!-- this ngModel has two way data binding  - Banana in a Box -->
+      <input type="text" name="cidade" [(ngModel)]="cidade" />
+      {{ cidade }}
+
+    <md-card-content>
+      <label for="estado">Estado</label>
+      <!-- this is another way to create two way data binding - old version -->
+      <input type="text" name="estado"  [ngModel]="estado" (ngModelChange)="estado=$event" />
+      {{ estado }}
+    </md-card-content>
+
+    <md-card-content>
+      <input type="checkbox" name="agree" [(ngModel)]="model.agree" />
+      <label for="dani">I Agree</label>
+    </md-card-content>
+
+    <md-card-content>
+      <label for="">Select</label>
+      <select name="items" [(ngModel)]="model.items">
+        <option *ngFor="let item of list">
+            {{ item }}
+        </option>
+      </select>
+    </md-card-content>
+
+    <md-card-content>
+      <label>Comida Preferida</label>
+
+      <label>
+        <input type="radio" name="comida" value="massas" [(ngModel)]="model.comida">
+        Massas
+      </label>
+
+      <label>
+        <input type="radio" name="comida" value="salada" [(ngModel)]="model.comida">
+        Salada
+      </label>
+    </md-card-content>
+
+    <md-card-actions>
+      <button>Enviar</button>
+    </md-card-actions>
+  </md-card>
+</form>
+{{ form.pristine }}
+
+<br /><br /><br />
+<h2>Model</h2>
+{{ model | json }}
+<br /><br />
+
+<h2>Angular ngModel Values</h2>
+{{ form.value | json }}
