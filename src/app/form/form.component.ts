@@ -9,10 +9,18 @@ import { formData } from '../models/form.model';
 
 export class FormComponent implements OnInit {
   list = ['Item1', 'Item2', 'Item3'];
+
+  estados = [
+    {value: 'São Paulo', viewValue: 'São Paulo'},
+    {value: 'Minas Gerais', viewValue: 'Minas Gerais'},
+    {value: 'Rio de Janeiro', viewValue: 'Rio de Janeiro'},
+    {value: 'Curitiba', viewValue: 'Curitiba'}
+  ];
+
   model = new formData('Danielle', 'd@ciandt.com', '19-99999', 'Campinas', 'São Paulo', false, ' ', ' ');
 
   changeEmail(value: string) {
-    if(value.length > 0) {
+    if (value.length > 0) {
       this.model.email = value.charAt(0).toUpperCase() + value.slice(1);
     } else {
       this.model.email = value;
@@ -21,5 +29,7 @@ export class FormComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+
+   }
 }

@@ -2,59 +2,38 @@
 
 <form #form="ngForm" novalidate>
   <md-card>
-      <label for="nome">Nome</label>
-      <input type="text" name="nome" [(ngModel)]="model.nome" />
+      <md-input-container class="example-full-width">
+        <input mdInput placeholder="Nome" value="">
+      </md-input-container>
 
-      <label for="email">E-mail</label>
-      <!-- this ngModel has one way binding. This is no changint the model -->
-      <input type="text" name="email" [ngModel]="model.email" (ngModelChange)="changeEmail($event)" />
+      <md-input-container class="example-full-width">
+        <input mdInput name="email" placeholder="Email" (ngModelChange)="changeEmail($event)" />
+      </md-input-container>
 
-      <label for="telefone">Telefone</label>
-        <!-- this ngModel has two way data binding with the Model on Controller -->
-      <input type="text" name="telefone" [(ngModel)]="model.telefone" />
+      <md-input-container class="example-full-width">
+        <input mdInput placeholder="Telefone" value="">
+      </md-input-container>
 
-      <label for="cidade">Cidade</label>
-      <!-- this ngModel has two way data binding  - Banana in a Box -->
-      <input type="text" name="cidade" [(ngModel)]="cidade" />
-      {{ cidade }}
+      <md-input-container class="example-full-width">
+        <input mdInput placeholder="Cidade" value="">
+      </md-input-container>
 
-    <md-card-content>
-      <label for="estado">Estado</label>
-      <!-- this is another way to create two way data binding - old version -->
-      <input type="text" name="estado"  [ngModel]="estado" (ngModelChange)="estado=$event" />
-      {{ estado }}
+      <md-card-content class="example-full-width">
+        <md-select placeholder="Estados" [(ngModel)]="selectedValue" name="estado">
+          <md-option *ngFor="let estado of estados" [value]="estado.value">
+            {{estado.viewValue}}
+          </md-option>
+        </md-select>
+      </md-card-content>
+
+     <md-card-content class="example-full-width">
+      <md-checkbox class="example-margin">Checked</md-checkbox>
+      <md-checkbox class="example-margin">Indeterminate</md-checkbox>
     </md-card-content>
 
-    <md-card-content>
-      <input type="checkbox" name="agree" [(ngModel)]="model.agree" />
-      <label for="dani">I Agree</label>
-    </md-card-content>
-
-    <md-card-content>
-      <label for="">Select</label>
-      <select name="items" [(ngModel)]="model.items">
-        <option *ngFor="let item of list">
-            {{ item }}
-        </option>
-      </select>
-    </md-card-content>
-
-    <md-card-content>
-      <label>Comida Preferida</label>
-
-      <label>
-        <input type="radio" name="comida" value="massas" [(ngModel)]="model.comida">
-        Massas
-      </label>
-
-      <label>
-        <input type="radio" name="comida" value="salada" [(ngModel)]="model.comida">
-        Salada
-      </label>
-    </md-card-content>
 
     <md-card-actions>
-      <button>Enviar</button>
+      <button md-button>Enviar</button>
     </md-card-actions>
   </md-card>
 </form>
