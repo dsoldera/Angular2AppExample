@@ -8,7 +8,8 @@ import { Form2Component } from './form2/form2.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 
 const appRoutes: Routes = [
-  { path: '', component: FormComponent },
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent},
   { path: 'about', component: AboutComponent },
   { path: 'form', component: FormComponent },
   { path: 'form2', component: Form2Component },

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { form2Data } from '../models/form2.model';
+import { form2Data } from '../shared/models/form2.model';
 
 @Component({
   moduleId: 'app-my-form-2',
