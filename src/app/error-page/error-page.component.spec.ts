@@ -3,26 +3,26 @@ import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { AboutComponent } from './about.component';
+import { ErrorPageComponent } from './error-page.component';
 
-describe('aboutComponent', () => {
+describe('ErrorPageComponent', () => {
 
-  let component: AboutComponent;
-  let fixture: ComponentFixture<AboutComponent>;
+  let component: ErrorPageComponent;
+  let fixture: ComponentFixture<ErrorPageComponent>;
   let de: DebugElement;
   let el: HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AboutComponent
+        ErrorPageComponent
       ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AboutComponent);
+    fixture = TestBed.createComponent(ErrorPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     de = fixture.debugElement.query(By.css('h1'));
@@ -33,28 +33,14 @@ describe('aboutComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // beforeAll(() => {});
-  // afterEach(() => {});
-  // afterAll(() => {});
-
-  it('should increment totalVotes when upvoted', () => {
-    component.upVote();
-    expect(component.totalVotes).toBe(1);
-  });
-
-  it('should decrement totalVotes when downvoted', () => {
-    component.downVote();
-    expect(component.totalVotes).toBe(-1);
-  });
-
   it('should display original title', () => {
     fixture.detectChanges();
-    expect(el.textContent).toContain(component.title);
+    expect(el.textContent).toContain(component.messageError);
   });
 
   it('should display a different test title', () => {
-    component.title = 'About Component';
+    component.messageError = 'Error Page - URL não encontrada!';
     fixture.detectChanges();
-    expect(el.textContent).toContain('About Component');
+    expect(el.textContent).toContain('Error Page - URL não encontrada!');
   });
 });
