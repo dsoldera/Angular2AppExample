@@ -3,11 +3,22 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   moduleId: 'app-about',
   selector: 'app-about',
-  template: `<h1>About Page</h1>
-             <h3>## Testing others Plugins ##</h3> `
+  templateUrl: './about.component.html'
 })
 export class AboutComponent implements OnInit {
+
+  totalVotes: number = 0;
+  title: string = 'About Component';
+
   constructor() { }
 
   ngOnInit() { }
+
+  upVote(){
+    this.totalVotes++;
+  }
+
+  downVote() {
+    this.totalVotes--;
+  }
 }
